@@ -1,44 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>加载中...</title>
-</head>
-<body>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-  <h1>正在加载中...</h1>
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-  <script>
-    // 定义链接
-    var linkA = "https://mmbiz.qpic.cn/mmbiz_png/tpwXeZLOwyGTO6cEamm5cmjtLKeqkia9cMdyQXibU2HzSZYBSibvicTlnVoBmFLcy32A1WFmo2QhUCp1gia0vVZXiaCA/0";
-    var linkB = "https://mmbiz.qpic.cn/mmbiz_png/tpwXeZLOwyGTO6cEamm5cmjtLKeqkia9cMdyQXibU2HzSZYBSibvicTlnVoBmFLcy32A1WFmo2QhUCp1gia0vVZXiaCA/0";
-    var linkC = "https://qm.qq.com/q/5DHdRvQz3W";
-    var linkD = "https://qm.qq.com/q/Bo1olZpjjO";
-    var linkE = "https://sourl.cn/nbfxkc";
-
-    // 检测是否在微信中打开
-    var isWeChat = navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1;
-
-    // 检测是否在QQ中打开
-    var isQQ = navigator.userAgent.toLowerCase().indexOf('qq') !== -1;
-
-    // 根据不同情况选择链接并执行跳转
-    if (isWeChat) {
-      // 在微信中打开
-      var randomIndexAB = Math.floor(Math.random() * 2);
-      var randomLinkAB = (randomIndexAB === 0) ? linkA : linkB;
-      window.location.href = randomLinkAB;
-    } else if (isQQ) {
-      // 在QQ中打开
-      var randomIndexCD = Math.floor(Math.random() * 2);
-      var randomLinkCD = (randomIndexCD === 0) ? linkC : linkD;
-      window.location.href = randomLinkCD;
-    } else {
-      // 在其他浏览器中打开
-      window.location.href = linkE;
-    }
-  </script>
-
-</body>
-</html>
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';
